@@ -1,7 +1,8 @@
 import express, { Application } from "express";
 import bodyParser from "body-parser";
-import { addToUserCart, addUserWishlistByUsername, createUser, deleteUser, editUser, getAllUsers, getUserById, getUserByUsername, getUserWishlistByUsername, logInUser, logOut, refreshToken, testAccessProtectedRoute, uploadAvatar } from "./src/controllers/Users";
 import dotenv from "dotenv"
+dotenv.config({ path: __dirname+'/.env' });
+import { addToUserCart, addUserWishlistByUsername, createUser, deleteUser, editUser, getAllUsers, getUserById, getUserByUsername, getUserWishlistByUsername, logInUser, logOut, refreshToken, testAccessProtectedRoute, uploadAvatar } from "./src/controllers/Users";
 import passport from "passport";
 import cookieParser from 'cookie-parser'
 import cors from "cors";
@@ -15,7 +16,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(passport.initialize());
 app.use(cookieParser())
 app.use(cors({ credentials:true, origin:'http://localhost:5173' }));
-dotenv.config({ path: __dirname+'/.env' });
 // Serve uploaded files from the 'uploads' directory
 app.use('/uploads', express.static('./src/uploads'));
 

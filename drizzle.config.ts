@@ -8,10 +8,10 @@ export default {
   out: "./src/db/migrations",
   schema: "./src/db/schema.ts",
   dbCredentials: {
-    user: "root",
-    password: "",
-    host: "127.0.0.1",
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    host: process.env.DB_HOST || "",
     port: 3306,
-    database: "drizzle_db",
+    database: process.env.DB_NAME || "",
   }
 } satisfies Config;

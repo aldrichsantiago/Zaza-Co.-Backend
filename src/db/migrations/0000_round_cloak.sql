@@ -9,8 +9,8 @@ CREATE TABLE `orders` (
 	`zip_code` int,
 	`payment_method` enum('visa','mastercard','paypal','gcash','maya'),
 	`status` enum('to_pack','in_logistics','shipped','out_for_delivery','delivered','cancelled'),
-	`shipping_amount` float,
-	`subtotal` float,
+	`shipping_amount` float NOT NULL,
+	`subtotal` float NOT NULL,
 	`created_at` timestamp DEFAULT (now()),
 	CONSTRAINT `orders_order_no` PRIMARY KEY(`order_no`)
 );

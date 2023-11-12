@@ -1,7 +1,7 @@
 {
   "version": "5",
   "dialect": "mysql",
-  "id": "5b691bfd-3c5c-4be4-8dac-ad6267825db1",
+  "id": "b83bd2e2-bac1-49a9-8e52-e5e6b94866f7",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "orders": {
@@ -81,14 +81,14 @@
           "name": "shipping_amount",
           "type": "float",
           "primaryKey": false,
-          "notNull": false,
+          "notNull": true,
           "autoincrement": false
         },
         "subtotal": {
           "name": "subtotal",
           "type": "float",
           "primaryKey": false,
-          "notNull": false,
+          "notNull": true,
           "autoincrement": false
         },
         "created_at": {

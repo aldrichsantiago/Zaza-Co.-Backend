@@ -1,10 +1,9 @@
 import { Request, Response } from "express";
-import { SQL, and, asc, desc, eq, name, sql } from "drizzle-orm";
+import { and, asc, desc, eq, name, sql } from "drizzle-orm";
 import { db } from "../db";
-import { products, users } from "../db/schema";
+import { products } from "../db/schema";
 import multer from 'multer'
 import { MySqlRawQueryResult } from "drizzle-orm/mysql2";
-import { json } from "stream/consumers";
 
 
 interface createProductRequest extends Request{
