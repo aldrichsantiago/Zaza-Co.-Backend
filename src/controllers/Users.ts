@@ -16,7 +16,7 @@ interface createUserRequest extends Request{
     "confPassword": string
 }
 
-export const createUser = async(req: createUserRequest , res: Response) => {
+export const createUser = async(req: Request , res: Response) => {
     const {firstName, lastName, email, username, password, confirmPassword} = req.body;
 
     const user = await db.select().from(users).where(eq(users.username, username)).limit(1)
@@ -371,7 +371,7 @@ export const uploadAvatar = async(req: Request , res: Response) => {
 }
 
 
-export const addToUserCart = async(req: createUserRequest , res: Response) => {
+export const addToUserCart = async(req: Request , res: Response) => {
     const username = req.params.username;
     const { cart } = req.body;
 

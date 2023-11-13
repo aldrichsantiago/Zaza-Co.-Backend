@@ -46,7 +46,7 @@ export const uploadProductPhotos = async(req: createProductRequest , res: Respon
     res.status(200);
 }
 
-export const createProduct = async(req: createProductRequest , res: Response) => {
+export const createProduct = async(req: Request , res: Response) => {
     try {
         const body = JSON.parse(JSON.stringify(req.body));
         const { name, description, price, stocks, category } = JSON.parse(body.data);
