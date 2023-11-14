@@ -16,8 +16,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(passport.initialize());
 app.use(cookieParser())
 app.use(cors({ 
-  credentials:true, 
-  origin: [process.env.FRONTEND_URL||'*', process.env.FRONTEND_URL_2||'*','*']
+  origin: [process.env.FRONTEND_URL||'*', process.env.FRONTEND_URL_2||'*','*'],
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+  allowedHeaders: 'Content-Type,Authorization',
  }));
 // Serve uploaded files from the 'uploads' directory
 app.use('/uploads', express.static('./src/uploads'));
