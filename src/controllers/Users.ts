@@ -125,7 +125,7 @@ export const logInUser = async(req: Request, res: Response) => {
 
     //UPDATE THE REFRESH TOKEN COLUMN ON DATABASE
     await db.update(users).set({ refreshToken: refreshToken }).where(eq(users.id, user[0].id));
-    res.cookie('refreshToken', refreshToken,{ httpOnly: true, maxAge: 24 * 60 * 60 * 1000 });
+    res.cookie('refreshToken', refreshToken,{ secure: true, httpOnly: true, maxAge: 24 * 60 * 60 * 1000 });
     return res.status(200).json({ 
         token: "Bearer " + accessToken, 
         role: user[0].role, 
