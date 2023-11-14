@@ -15,7 +15,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(passport.initialize());
 app.use(cookieParser())
-app.use(cors({ credentials:true, origin:'http://localhost:5173' }));
+app.use(cors({ 
+  credentials:true, 
+  origin: [process.env.FRONTEND_URL||"", process.env.FRONTEND_URL_2||""]
+ }));
 // Serve uploaded files from the 'uploads' directory
 app.use('/uploads', express.static('./src/uploads'));
 
