@@ -62,12 +62,9 @@ export const createProduct = async(req: Request , res: Response) => {
         console.log(images)
         if (!req.files) {
             console.log(req.files)
-
-            return res.status(400).send('No file uploaded.');
+            return res.status(400).json({success: false, message:'No file uploaded.'});
         }
-        
         console.log(req.body)
-        
         console.log(req.files)
 
         await db.insert(products).values({
@@ -80,9 +77,9 @@ export const createProduct = async(req: Request , res: Response) => {
             ratings: 0,
             images,
             isDeleted: false,
-            
-        }).catch((error) => console.log(error))    
-        return res.status(200).json({success: true, name, description, price, stocks, category,})
+        }).catch((error) => console.log(error))
+
+        return res.redirect('/admin/products');
 
     } catch (error) {
         console.log(error);
