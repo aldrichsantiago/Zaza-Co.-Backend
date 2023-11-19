@@ -79,8 +79,8 @@ export const createProduct = async(req: Request , res: Response) => {
             isDeleted: false,
         }).catch((error) => console.log(error))
 
-        return res.redirect('/admin/products');
-
+        // return res.redirect('/admin/products');
+        return res.status(200);
     } catch (error) {
         console.log(error);
     }
