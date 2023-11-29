@@ -17,8 +17,8 @@ app.use(passport.initialize());
 app.use(cookieParser())
 app.use(cors({ 
   // origin: 'https://zaza-co-aldrichsantiagos-projects.vercel.app',
-  // origin: 'https://zaza-co.netlify.app',
-  origin: 'http://localhost:5173',
+  origin: 'https://zaza-co.netlify.app',
+  // origin: 'http://localhost:5173',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
   allowedHeaders: 'Content-Type,Authorization',
