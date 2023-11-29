@@ -80,7 +80,7 @@ export const createProduct = async(req: Request , res: Response) => {
         }).catch((error) => console.log(error))
 
         // return res.redirect('/admin/products');
-        return res.status(200);
+        return res.status(200).redirect('/admin/products');
     } catch (error) {
         console.log(error);
     }
